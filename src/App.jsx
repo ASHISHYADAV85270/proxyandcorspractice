@@ -8,9 +8,15 @@ function App() {
   useEffect(() => {
     axios
       .get("/api/aboutme")
-      .then((res) => Setuserdata(res.data))
-      .catch((error) => console.log(error));
-  });
+      .then((res) => {
+        console.log(`hiii i am respo ${res.data}`);
+        Setuserdata(res.data);
+      })
+      .catch((error) => {
+        console.log(" i am error");
+        console.log(error);
+      });
+  }, []);
   return (
     <>
       <div>
